@@ -1,0 +1,79 @@
+{
+    "properties": {
+        "name": "test123",
+        "id": "pvhgf",
+        "project": "test123",
+        "environment": {
+            "type": "noflo-nodejs"
+        }
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {
+        "core/Repeat_3am0f": {
+            "component": "core/Repeat",
+            "metadata": {
+                "label": "core/Repeat",
+                "x": -2671.6858742908003,
+                "y": -5252.049786035798
+            }
+        },
+        "handyman/Log_3e3lz": {
+            "component": "handyman/Log",
+            "metadata": {
+                "label": "handyman/Log",
+                "x": -2340,
+                "y": -5076
+            }
+        },
+        "math/Multiply_891pg": {
+            "component": "math/Multiply",
+            "metadata": {
+                "label": "math/Multiply",
+                "x": -2448,
+                "y": -5184
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "core/Repeat_3am0f",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "math/Multiply_891pg",
+                "port": "multiplicand"
+            },
+            "metadata": {
+                "route": null
+            }
+        },
+        {
+            "src": {
+                "process": "math/Multiply_891pg",
+                "port": "product"
+            },
+            "tgt": {
+                "process": "handyman/Log_3e3lz",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "data": 6,
+            "tgt": {
+                "process": "math/Multiply_891pg",
+                "port": "multiplier"
+            }
+        },
+        {
+            "data": "7",
+            "tgt": {
+                "process": "core/Repeat_3am0f",
+                "port": "in"
+            }
+        }
+    ]
+}
