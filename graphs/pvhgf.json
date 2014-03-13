@@ -69,7 +69,7 @@
             }
         },
         {
-            "data": "7",
+            "data": "23",
             "tgt": {
                 "process": "core/Repeat_3am0f",
                 "port": "in"
